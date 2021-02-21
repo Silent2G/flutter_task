@@ -38,6 +38,7 @@ class LogOutDialog extends StatelessWidget {
                   child: ColorButton(
                     color: AppColors.BLUE,
                     textColor: AppColors.WHITE,
+                    height: 40,
                     text: "No",
                     textSize: 35,
                     onPressed: () {
@@ -52,6 +53,7 @@ class LogOutDialog extends StatelessWidget {
                   child: ColorButton(
                     color: AppColors.BLUE,
                     textColor: AppColors.WHITE,
+                    height: 40,
                     text: "Yes",
                     textSize: 35,
                     onPressed: () {

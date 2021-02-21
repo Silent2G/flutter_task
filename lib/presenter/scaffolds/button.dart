@@ -26,7 +26,7 @@ class ColorButton extends StatelessWidget {
       this.borderRadius,
       this.text,
       this.fontWeight,
-      this.textSize,
+      @required this.textSize,
       this.letterSpacing,
       this.textColor = AppColors.WHITE})
       : super(key: key);
