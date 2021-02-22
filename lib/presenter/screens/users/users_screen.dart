@@ -3,7 +3,9 @@ import 'package:company_task/presenter/scaffolds/button.dart';
 import 'package:company_task/presenter/scaffolds/icon_button.dart';
 import 'package:company_task/presenter/scaffolds/text.dart';
 import 'package:company_task/presenter/screens/users/animations/animated_opacity.dart';
+import 'package:company_task/presenter/screens/users/animations/move_up_down.dart';
 import 'package:company_task/presenter/screens/users/dialogs/log_out_dialog.dart';
+import 'package:company_task/presenter/screens/users/providers/move_notifier.dart';
 import 'package:company_task/presenter/screens/users/providers/opacity_notifier.dart';
 import 'package:company_task/presenter/screens/users/widgets/list_item.dart';
 import 'package:company_task/providers/dummy_stub_notifier.dart';
@@ -68,7 +70,7 @@ class UsersScreenState extends State<UsersScreen> {
         ],
       ),
       body: ChangeNotifierProvider(
-        create: (context) => OpacityNotifier(),
+        create: (context) => MoveNotifier(),
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
@@ -83,7 +85,7 @@ class UsersScreenState extends State<UsersScreen> {
                 }
                 return ListView.builder(
                     controller: Container().initController(
-                        Provider.of<OpacityNotifier>(context, listen: false)),
+                        Provider.of<MoveNotifier>(context, listen: false)),
                     padding: EdgeInsets.zero,
                     itemCount: notifier.users.length,
                     scrollDirection: Axis.vertical,
@@ -106,7 +108,7 @@ class UsersScreenState extends State<UsersScreen> {
             ),
             Container(
               padding: EdgeInsets.only(bottom: 50.h, right: 30.w, left: 30.w),
-              child: ButtonAnimatedOpacity(
+              child: ButtonMoveUpDown(
                 child: ColorButton(
                     text: "Button",
                     color: AppColors.BLUE,
